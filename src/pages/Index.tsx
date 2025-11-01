@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/Layout";
+import { ThreeGlobe } from "@/components/ThreeGlobe";
 import { MeshBackground } from "@/components/MeshBackground";
 import { StatCard } from "@/components/StatCard";
 import { Droplets, Wind, Zap, Users, TrendingDown, Globe2 } from "lucide-react";
@@ -8,6 +9,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <Layout>
+      <ThreeGlobe />
       <MeshBackground />
       
       {/* Hero Section */}
