@@ -10,6 +10,7 @@ import Learn from "./pages/Learn";
 import Health from "./pages/Health";
 import Community from "./pages/Community";
 import Subscribe from "./pages/Subscribe";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/learn" element={<Learn />} />
           <Route path="/health" element={<Health />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/subscribe" element={<Subscribe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
