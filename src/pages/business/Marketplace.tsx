@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const dummyProducts = [
   {
@@ -64,9 +65,15 @@ const Marketplace = () => {
           <h1 className="text-4xl font-bold mb-4 bg-gradient-eco bg-clip-text text-transparent">
             Eco Marketplace
           </h1>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-4">
             Discover sustainable products sourced intelligently from trusted online stores.
           </p>
+          
+          <Link to="/marketplace/signup">
+            <Button variant="outline" className="mb-8">
+              Join as Supplier or Retailer
+            </Button>
+          </Link>
 
           {/* Search Bar */}
           <div className="flex justify-center gap-2 mb-12">

@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { BookOpen, Brain, TrendingUp, Users, Loader2 } from "lucide-react";
+import { AIAssistant } from "@/components/learn/AIAssistant";
+import { FlashcardGenerator } from "@/components/learn/FlashcardGenerator";
 
 const Learn = () => {
   const { user, loading, signOut } = useAuth();
@@ -100,6 +102,12 @@ const Learn = () => {
                 Collaborate with learners worldwide
               </p>
             </Card>
+          </div>
+
+          {/* AI Features */}
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
+            <AIAssistant />
+            <FlashcardGenerator />
           </div>
         </div>
       </section>

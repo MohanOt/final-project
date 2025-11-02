@@ -5,12 +5,14 @@ import { MeshBackground } from "@/components/MeshBackground";
 import { StatCard } from "@/components/StatCard";
 import { Droplets, Wind, Zap, Users, TrendingDown, Globe2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AdditionalGlobes } from "@/components/AdditionalGlobes";
 
 const Index = () => {
   return (
     <Layout>
       <ThreeGlobe />
       <MeshBackground />
+      <AdditionalGlobes />
       
       {/* Hero Section */}
       <section className="relative py-32 px-4">

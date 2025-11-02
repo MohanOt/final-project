@@ -15,6 +15,10 @@ import Tech from  "./pages/Tech";
 import NotFound from "./pages/NotFound";
 import Marketplace from "./pages/business/Marketplace";
 import AutoShop from "./pages/business/AutoShop";
+import MarketplaceSignup from "./pages/MarketplaceSignup";
+import SupplierDashboard from "./pages/marketplace/SupplierDashboard";
+import RetailerDashboard from "./pages/marketplace/RetailerDashboard";
+import CustomerDashboard from "./pages/marketplace/CustomerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -34,9 +38,12 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/tech" element={<Tech />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/business/marketplace" element={<Marketplace />} />
           <Route path="/business/autoshop" element={<AutoShop />} />
+          <Route path="/marketplace/signup" element={<MarketplaceSignup />} />
+          <Route path="/marketplace/supplier-dashboard" element={<SupplierDashboard />} />
+          <Route path="/marketplace/retailer-dashboard" element={<RetailerDashboard />} />
+          <Route path="/marketplace/customer-dashboard" element={<CustomerDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
