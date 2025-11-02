@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Loader2 } from "lucide-react";
@@ -24,6 +24,11 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // ✅ Capture redirect parameter (e.g., /auth?redirect=/business/autoshop)
+  const searchParams = new URLSearchParams(location.search);
+  const redirectTo = searchParams.get("redirect") || "/learn";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,13 +51,13 @@ const Auth = () => {
         if (error) throw error;
         
         toast.success("Welcome back!");
-        navigate("/learn");
+        navigate(redirectTo); // ✅ Go to redirect page
       } else {
         const { error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/learn`,
+            emailRedirectTo: `${window.location.origin}${redirectTo}`, // ✅ Match redirect
             data: {
               full_name: fullName,
             },
@@ -62,7 +67,7 @@ const Auth = () => {
         if (error) throw error;
         
         toast.success("Account created! You're now logged in.");
-        navigate("/learn");
+        navigate(redirectTo); // ✅ Go to redirect page
       }
     } catch (error: any) {
       if (error instanceof z.ZodError) {
@@ -89,8 +94,8 @@ const Auth = () => {
             </h1>
             <p className="text-muted-foreground">
               {isLogin 
-                ? "Sign in to access Learn Hub" 
-                : "Create an account to start learning"}
+                ? "Sign in to access your tools" 
+                : "Create an account to get started"}
             </p>
           </div>
 

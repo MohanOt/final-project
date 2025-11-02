@@ -11,7 +11,10 @@ import Health from "./pages/Health";
 import Community from "./pages/Community";
 import Subscribe from "./pages/Subscribe";
 import Auth from "./pages/Auth";
+import Tech from  "./pages/Tech";
 import NotFound from "./pages/NotFound";
+import Marketplace from "./pages/business/Marketplace";
+import AutoShop from "./pages/business/AutoShop";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,10 @@ const App = () => (
           <Route path="/community" element={<Community />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/tech" element={<Tech />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/business/marketplace" element={<Marketplace />} />
+          <Route path="/business/autoshop" element={<AutoShop />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

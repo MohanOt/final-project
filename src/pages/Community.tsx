@@ -26,7 +26,7 @@ const Community = () => {
           </p>
           
           <Button variant="hero" size="lg">
-            Get Started Free
+            Get Started and Connect
           </Button>
         </div>
       </section>

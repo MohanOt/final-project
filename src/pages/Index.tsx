@@ -22,7 +22,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Empowering a{" "}
             <span className="bg-gradient-eco bg-clip-text text-transparent">
-              Greener Tomorrow
+              Greater Tomorrow
             </span>
           </h1>
           

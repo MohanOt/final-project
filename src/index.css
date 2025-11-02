@@ -2,12 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ================================
+    EcoScope Design System
+   Supports light & dark themes
+   ================================ */
 
 @layer base {
+  /* 🌞 Light Theme (default) */
   :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 35%;
+
+    --accent: 187 95% 43%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+
+    /* 🌿 EcoScope Tokens */
+    --eco-green: 160 84% 39%;
+    --eco-green-light: 160 70% 50%;
+    --eco-green-glow: 160 84% 39%;
+
+    --ocean-blue: 199 89% 48%;
+    --ocean-blue-dark: 199 70% 35%;
+
+    --cyber-cyan: 187 95% 43%;
+    --cyber-cyan-bright: 187 90% 55%;
+
+    --space-dark: 222 47% 11%;
+    --space-darker: 222 47% 8%;
+
+    /* Gradients & Shadows */
+    --gradient-eco: linear-gradient(135deg, hsl(var(--eco-green)) 0%, hsl(var(--ocean-blue)) 100%);
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-cyan)) 0%, hsl(var(--ocean-blue)) 100%);
+    --gradient-radial: radial-gradient(circle at center, hsl(var(--eco-green) / 0.2) 0%, transparent 70%);
+    --glow-eco: 0 0 20px hsl(var(--eco-green) / 0.4);
+    --glow-cyan: 0 0 30px hsl(var(--cyber-cyan) / 0.5);
+    --shadow-elevated: 0 10px 40px -10px hsl(222 47% 5% / 0.5);
+  }
+
+  /* 🌚 Dark Theme */
+  .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
@@ -35,41 +91,13 @@ All colors MUST be HSL.
     --border: 222 47% 25%;
     --input: 222 47% 20%;
     --ring: 160 84% 39%;
-
-    --radius: 0.75rem;
-
-    /* Custom EcoScope tokens */
-    --eco-green: 160 84% 39%;
-    --eco-green-light: 160 70% 50%;
-    --eco-green-glow: 160 84% 39%;
-    
-    --ocean-blue: 199 89% 48%;
-    --ocean-blue-dark: 199 70% 35%;
-    
-    --cyber-cyan: 187 95% 43%;
-    --cyber-cyan-bright: 187 90% 55%;
-    
-    --space-dark: 222 47% 11%;
-    --space-darker: 222 47% 8%;
-    
-    /* Gradients */
-    --gradient-eco: linear-gradient(135deg, hsl(var(--eco-green)) 0%, hsl(var(--ocean-blue)) 100%);
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-cyan)) 0%, hsl(var(--ocean-blue)) 100%);
-    --gradient-radial: radial-gradient(circle at center, hsl(var(--eco-green) / 0.2) 0%, transparent 70%);
-    
-    /* Glows & Shadows */
-    --glow-eco: 0 0 20px hsl(var(--eco-green) / 0.4);
-    --glow-cyan: 0 0 30px hsl(var(--cyber-cyan) / 0.5);
-    --shadow-elevated: 0 10px 40px -10px hsl(222 47% 5% / 0.5);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 }
