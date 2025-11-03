@@ -6,6 +6,7 @@ import { StatCard } from "@/components/StatCard";
 import { Droplets, Wind, Zap, Users, TrendingDown, Globe2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AdditionalGlobes } from "@/components/AdditionalGlobes";
+import { EcoAIChat } from "@/components/EcoAIChat";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <ThreeGlobe />
       <MeshBackground />
       <AdditionalGlobes />
+      <EcoAIChat />
       
       {/* Hero Section */}
       <section className="relative py-32 px-4">
@@ -44,6 +46,28 @@ const Index = () => {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* EcoAI Showcase */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-radial opacity-50" />
+        <div className="container mx-auto text-center relative">
+          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-gradient-eco text-primary-foreground text-sm font-medium animate-pulse">
+            Powered by EcoAI
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            The <span className="bg-gradient-eco bg-clip-text text-transparent">Intelligence Core</span> of EcoScope
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Our AI assistant helps you learn, analyze, and make smarter sustainability decisions across the entire platform.
+          </p>
+          <Link to="/ecoai">
+            <Button variant="hero" size="lg" className="group">
+              Explore EcoAI
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            </Button>
+          </Link>
         </div>
       </section>
 

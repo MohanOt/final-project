@@ -12,6 +12,7 @@ import Community from "./pages/Community";
 import Subscribe from "./pages/Subscribe";
 import Auth from "./pages/Auth";
 import Tech from  "./pages/Tech";
+import EcoAI from "./pages/EcoAI";
 import NotFound from "./pages/NotFound";
 import Marketplace from "./pages/business/Marketplace";
 import AutoShop from "./pages/business/AutoShop";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/tech" element={<Tech />} />
+          <Route path="/ecoai" element={<EcoAI />} />
           <Route path="/business/marketplace" element={<Marketplace />} />
           <Route path="/business/autoshop" element={<AutoShop />} />
           <Route path="/marketplace/signup" element={<MarketplaceSignup />} />

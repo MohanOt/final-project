@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Leaf, Menu, X } from "lucide-react";
+import { Brain, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme/ThemeToggle";
 
@@ -10,7 +10,7 @@ const [mobileOpen, setMobileOpen] = useState(false);
 
 return ( <div className="min-h-screen bg-background">
 {/* Navigation */} <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"> <div className="container mx-auto px-4"> <div className="flex h-16 items-center justify-between">
-{/* Logo */} <Link to="/" className="flex items-center gap-2 group"> <div className="p-2 rounded-lg bg-gradient-eco shadow-glow-eco group-hover:scale-110 transition-transform"> <Leaf className="h-5 w-5 text-primary-foreground" /> </div> <span className="text-xl font-bold bg-gradient-eco bg-clip-text text-transparent">
+{/* Logo */} <Link to="/" className="flex items-center gap-2 group"> <div className="relative p-2 rounded-lg bg-gradient-eco shadow-glow-eco group-hover:scale-110 transition-transform"> <Brain className="h-5 w-5 text-primary-foreground" /> <div className="absolute -top-0.5 -right-0.5 h-2 w-2 bg-accent rounded-full animate-pulse" /> </div> <span className="text-xl font-bold bg-gradient-eco bg-clip-text text-transparent">
 EcoScope </span> </Link>
 
 ```
@@ -125,6 +125,18 @@ EcoScope </span> </Link>
           >
             Tech
           </Link>
+          <Link
+            to="/ecoai"
+            className={cn(
+              "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1.5",
+              location.pathname === "/ecoai"
+                ? "bg-gradient-eco text-primary-foreground shadow-glow-eco"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted"
+            )}
+          >
+            <Brain className="h-4 w-4" />
+            EcoAI
+          </Link>
         </div>
 
         {/* Right-side actions: Theme toggle + CTA */}
@@ -227,6 +239,13 @@ EcoScope </span> </Link>
           className="block px-4 py-3 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           Tech
+        </Link>
+        <Link
+          to="/ecoai"
+          className="block px-4 py-3 text-sm text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2"
+        >
+          <Brain className="h-4 w-4" />
+          EcoAI
         </Link>
       </div>
     )}

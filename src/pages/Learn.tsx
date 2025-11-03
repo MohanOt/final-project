@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { BookOpen, Brain, TrendingUp, Users, Loader2 } from "lucide-react";
 import { AIAssistant } from "@/components/learn/AIAssistant";
 import { FlashcardGenerator } from "@/components/learn/FlashcardGenerator";
+import { EcoAIChat } from "@/components/EcoAIChat";
 
 const Learn = () => {
   const { user, loading, signOut } = useAuth();
@@ -37,6 +38,7 @@ const Learn = () => {
   return (
     <Layout>
       <MeshBackground />
+      <EcoAIChat />
       
       {/* Hero */}
       <section className="relative py-20 px-4">
