@@ -7,6 +7,7 @@ import { Droplets, Wind, Zap, Users, TrendingDown, Globe2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AdditionalGlobes } from "@/components/AdditionalGlobes";
 import { EcoAIChat } from "@/components/EcoAIChat";
+import communityCelebration from "@/assets/community-celebration.jpg";
 
 const Index = () => {
   return (
@@ -151,6 +152,35 @@ const Index = () => {
               trend="Complete"
               trendUp={true}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Community Celebration */}
+      <section className="relative py-20 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-glow-eco">
+              <img 
+                src={communityCelebration} 
+                alt="Community members celebrating sustainability achievements together"
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Join a <span className="bg-gradient-eco bg-clip-text text-transparent">Global Community</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Connect with thousands of sustainability champions worldwide. Share insights, 
+                celebrate wins, and collaborate on solutions that matter.
+              </p>
+              <Link to="/community">
+                <Button variant="hero" size="lg">
+                  Explore Community
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
