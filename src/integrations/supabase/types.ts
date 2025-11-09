@@ -14,6 +14,169 @@ export type Database = {
   }
   public: {
     Tables: {
+      ads: {
+        Row: {
+          body: string
+          business_id: string
+          created_at: string | null
+          cta: string
+          headline: string
+          id: string
+          platform: string | null
+          user_id: string
+        }
+        Insert: {
+          body: string
+          business_id: string
+          created_at?: string | null
+          cta: string
+          headline: string
+          id?: string
+          platform?: string | null
+          user_id: string
+        }
+        Update: {
+          body?: string
+          business_id?: string
+          created_at?: string | null
+          cta?: string
+          headline?: string
+          id?: string
+          platform?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ads_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "business_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      business_profiles: {
+        Row: {
+          business_name: string
+          created_at: string | null
+          id: string
+          industry: string | null
+          location: string | null
+          role: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          business_name: string
+          created_at?: string | null
+          id?: string
+          industry?: string | null
+          location?: string | null
+          role: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          business_name?: string
+          created_at?: string | null
+          id?: string
+          industry?: string | null
+          location?: string | null
+          role?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      flashcards: {
+        Row: {
+          answer: string
+          created_at: string | null
+          id: string
+          question: string
+          topic: string
+          user_id: string
+        }
+        Insert: {
+          answer: string
+          created_at?: string | null
+          id?: string
+          question: string
+          topic: string
+          user_id: string
+        }
+        Update: {
+          answer?: string
+          created_at?: string | null
+          id?: string
+          question?: string
+          topic?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      leaderboard: {
+        Row: {
+          created_at: string | null
+          id: string
+          rank: number | null
+          score: number | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          rank?: number | null
+          score?: number | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          rank?: number | null
+          score?: number | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          business_id: string
+          created_at: string | null
+          email: string
+          id: string
+          name: string
+          source: string | null
+        }
+        Insert: {
+          business_id: string
+          created_at?: string | null
+          email: string
+          id?: string
+          name: string
+          source?: string | null
+        }
+        Update: {
+          business_id?: string
+          created_at?: string | null
+          email?: string
+          id?: string
+          name?: string
+          source?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leads_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "business_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
@@ -35,6 +198,66 @@ export type Database = {
           full_name?: string | null
           id?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      progress: {
+        Row: {
+          created_at: string | null
+          id: string
+          last_active: string | null
+          level: number | null
+          score: number | null
+          skill: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          last_active?: string | null
+          level?: number | null
+          score?: number | null
+          skill: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          last_active?: string | null
+          level?: number | null
+          score?: number | null
+          skill?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      tasks: {
+        Row: {
+          completed: boolean | null
+          content: string
+          created_at: string | null
+          due_date: string | null
+          id: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          completed?: boolean | null
+          content: string
+          created_at?: string | null
+          due_date?: string | null
+          id?: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          completed?: boolean | null
+          content?: string
+          created_at?: string | null
+          due_date?: string | null
+          id?: string
+          type?: string
+          user_id?: string
         }
         Relationships: []
       }

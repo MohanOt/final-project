@@ -82,10 +82,10 @@ EcoScope </span> </Link>
             Climate
           </Link>
           <Link
-            to="/learn"
+            to="/learn/hub"
             className={cn(
               "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-              location.pathname === "/learn"
+              location.pathname.startsWith("/learn")
                 ? "bg-primary text-primary-foreground shadow-glow-eco"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted"
             )}
@@ -114,17 +114,28 @@ EcoScope </span> </Link>
           >
             Community
           </Link>
-          <Link
-            to="/tech"
-            className={cn(
-              "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-              location.pathname === "/tech"
-                ? "bg-primary text-primary-foreground shadow-glow-eco"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted"
-            )}
-          >
-            Tech
-          </Link>
+          {/* Tech Dropdown */}
+          <div className="relative group">
+            <Link
+              to="/tech"
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-between text-muted-foreground hover:text-foreground hover:bg-muted",
+                location.pathname.startsWith("/tech")
+                  ? "bg-primary text-primary-foreground shadow-glow-eco"
+                  : ""
+              )}
+            >
+              Tech
+            </Link>
+            <div className="absolute hidden group-hover:block bg-popover border border-border rounded-lg mt-1 shadow-lg min-w-[180px] z-50">
+              <Link
+                to="/tech/ecoai"
+                className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground rounded-lg"
+              >
+                EcoAI Dashboard
+              </Link>
+            </div>
+          </div>
           <Link
             to="/ecoai"
             className={cn(
@@ -217,7 +228,7 @@ EcoScope </span> </Link>
           Climate
         </Link>
         <Link
-          to="/learn"
+          to="/learn/hub"
           className="block px-4 py-3 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           Learn Hub
@@ -240,6 +251,14 @@ EcoScope </span> </Link>
         >
           Tech
         </Link>
+        <div className="pl-4">
+          <Link
+            to="/tech/ecoai"
+            className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          >
+            EcoAI Dashboard
+          </Link>
+        </div>
         <Link
           to="/ecoai"
           className="block px-4 py-3 text-sm text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2"
