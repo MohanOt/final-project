@@ -1,11 +1,20 @@
 # EcoScope - The Global AI Sustainability Grid
 
+**Note:** This project is still under development
+
 EcoScope is a web-based platform designed to empower individuals, businesses, and communities to act sustainably while leveraging AI tools. It integrates multiple modules, including an **AI-powered local business marketplace**, an **AI virtual assistant for startups**, and a **Skill-to-Income Learning Hub**.  
 
 This platform is built for SMEs, startups, and learners, combining automation, gamification, and sustainability tracking in a single seamless experience.
 
 ---
+
+[View live demo here](https://final-project-flax-nu.vercel.app/)
+
 ![live demo](./public/demo.png)
+
+
+[View Live Demo Here](https://final-project-flax-nu.vercel.app/)
+
 
 ## Table of Contents
 
