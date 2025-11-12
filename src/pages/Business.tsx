@@ -13,7 +13,7 @@ return ( <Layout> <MeshBackground />
       {/* Premium Tag */}
       <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-cyber/10 border border-cyber/20">
         <Lock className="h-4 w-4 text-cyber" />
-        <span className="text-sm text-cyber font-medium">Premium Feature</span>
+        <span className="text-sm text-cyber font-medium">Premium</span>
       </div>
 
       {/* Title */}

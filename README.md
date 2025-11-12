@@ -1,73 +1,163 @@
-# Welcome to your Lovable project
+# EcoScope - The Global AI Sustainability Grid
 
-## Project info
+EcoScope is a web-based platform designed to empower individuals, businesses, and communities to act sustainably while leveraging AI tools. It integrates multiple modules, including an **AI-powered local business marketplace**, an **AI virtual assistant for startups**, and a **Skill-to-Income Learning Hub**.  
 
-**URL**: https://lovable.dev/projects/c9c6981d-995f-4f77-aab8-69ee79710183
+This platform is built for SMEs, startups, and learners, combining automation, gamification, and sustainability tracking in a single seamless experience.
 
-## How can I edit this code?
+---
+[live demo](/public/demo.png)
+## Table of Contents
 
-There are several ways of editing your application.
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Setup & Installation](#setup--installation)
+- [Usage](#usage)
+- [Available Scripts](#available-scripts)
+- [Contributing](#contributing)
+- [License](#license)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c9c6981d-995f-4f77-aab8-69ee79710183) and start prompting.
+## Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. AI-Powered Local Business Marketplace
+- Users can sign up as **Suppliers, Retailers, or Customers**.
+- Suppliers and Retailers can upload products, run ads, and generate social media posts automatically using AI.
+- Customers can browse products, purchase, and track orders.
+- Lead tracking dashboard for SMEs.
 
-**Use your preferred IDE**
+### 2. AI Virtual Assistant for Startups
+- Automates emails, invoices, reminders, and document summaries.
+- Dashboard for startups to manage daily operational tasks.
+- AI insights to optimize workflows and productivity.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 3. Skill-to-Income Learning Hub
+- Gamified platform to teach monetizable digital skills.
+- Flashcards, assignments, and AI-assisted learning tools.
+- Real-time leaderboard to encourage engagement.
+- AI-powered content generation for learners.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 4. EcoScope Core Features
+- Dynamic dashboards for businesses and users.
+- Interactive, animated background with rotating mesh globes.
+- Light/Dark theme toggle.
+- Responsive design across devices.
+- Integration with Supabase for authentication, database, and real-time data.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Frontend:** React, TypeScript, TailwindCSS, Wouter/React Router
+- **Backend:** Supabase (PostgreSQL + Auth + Realtime)
+- **AI Integration:** OpenAI GPT API, custom AI modules for content, ads, and recommendations
+- **State Management:** React Query
+- **Animations:** Three.js / Canvas for mesh globes
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Project Structure
+
+```text
+client/src
+├── App.tsx
+├── main.tsx
+├── index.css
+├── components
+│   ├── Navbar.tsx
+│   ├── ProductCard.tsx
+│   ├── MeshBackground.tsx
+│   ├── ThemeToggle.tsx
+│   └── ui/ (all UI primitives)
+├── pages
+│   ├── Index.tsx
+│   ├── Marketplace.tsx
+│   ├── MarketplaceSignup.tsx
+│   ├── SellerDashboard.tsx
+│   ├── BuyerDashboard.tsx
+│   ├── Dashboard.tsx
+│   ├── LearnHub.tsx
+│   ├── AITools.tsx
+│   └── NotFound.tsx
+├── hooks
+│   ├── useAuth.tsx
+│   ├── useToast.ts
+├── lib
+│   ├── queryClient.ts
+│   └── utils.ts
+├── integrations
+│   └── supabase
+│       ├── client.ts
+│       └── types.ts
+Setup & Installation
+Prerequisites
+Node.js >= 18
+
+npm or yarn
+
+Supabase account (for database and authentication)
+
+OpenAI API key (for AI-powered features)
+
+Steps
+Clone the repository
+
+bash
+Copy code
+git clone https://github.com/yourusername/ecoscope-business.git
+cd ecoscope-business/client
+Install dependencies
+
+bash
+Copy code
+npm install
+# or
+yarn install
+Setup environment variables
+
+Create a .env file in client:
+
+env
+Copy code
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-key
+VITE_OPENAI_API_KEY=your-openai-api-key
+Start the development server
+
+bash
+Copy code
 npm run dev
-```
+# or
+yarn dev
+The app should now be running at http://localhost:5173.
 
-**Edit a file directly in GitHub**
+Usage
+Navigate to /marketplace to browse or manage products.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Navigate to /learn to access the Skill-to-Income Learning Hub.
 
-**Use GitHub Codespaces**
+Use /dashboard for business analytics and AI tools.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+/ai-tools hosts individual AI features like post generation, lead tracking, and virtual assistant modules.
 
-## What technologies are used for this project?
+Available Scripts
+npm run dev — Start development server
 
-This project is built with:
+npm run build — Build production bundle
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+npm run preview — Preview production build locally
 
-## How can I deploy this project?
+Contributing
+Fork the repository
 
-Simply open [Lovable](https://lovable.dev/projects/c9c6981d-995f-4f77-aab8-69ee79710183) and click on Share -> Publish.
+Create a new branch: git checkout -b feature-name
 
-## Can I connect a custom domain to my Lovable project?
+Commit your changes: git commit -m "Description of feature"
 
-Yes, you can!
+Push to branch: git push origin feature-name
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Open a Pull Request
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+EcoScope is designed to accelerate sustainable business growth while integrating AI solutions for efficiency, learning, and automation. 
