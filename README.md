@@ -5,7 +5,7 @@ EcoScope is a web-based platform designed to empower individuals, businesses, an
 This platform is built for SMEs, startups, and learners, combining automation, gamification, and sustainability tracking in a single seamless experience.
 
 ---
-[live demo](public/demo.png)
+![live demo](./public/demo.png)
 
 ## Table of Contents
 
